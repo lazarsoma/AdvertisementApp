@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Advertisements</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 1px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <li><a th:href="@{/advertisements}">Advertisements</a></li>
+</div><br>
+<div>
+<a href="/user/add" class="myButton">Add user</a>
+</div>
+<h1>List of users</h1>
+<div>
+    <table class="paleBlueRows">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getName()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
